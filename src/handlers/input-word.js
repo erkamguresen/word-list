@@ -13,7 +13,7 @@ const warnings = document.getElementById('warnings');
  */
 export const handleInputWord = (event) => {
   /* -- entry point for adding or removing a word -- */
-  // debugger;
+
   console.log('-- handler: input word --');
 
   /* -- check the target -- */
@@ -22,7 +22,7 @@ export const handleInputWord = (event) => {
   }
 
   /* -- gather user input from DOM -- */
-  const text = event.target.form.text.value;
+  const text = event.target.form.text.value.trim();
   const action = event.target.value;
 
   /* -- use the input and data to implement the user story --
@@ -42,7 +42,41 @@ export const handleInputWord = (event) => {
         the list is re-rendered
   */
 
-  // ... write some code ...
+  switch (action) {
+    case 'add':
+      if (isWord(text)) {
+        if (!data.words.includes(text)) {
+          data.words.push(text);
+        } else {
+          warnings.innerText = `"${text}" is already in the list`;
+          setTimeout(() => {
+            warnings.innerText = '';
+          }, 3000);
+        }
+      } else {
+        warnings.innerText = `"${text}" is not a word`;
+        setTimeout(() => {
+          warnings.innerText = '';
+        }, 4000);
+      }
+      break;
+
+    case 'remove':
+      if (data.words.includes(text)) {
+        data.words = data.words.filter((element) => {
+          return element !== text;
+        });
+      } else {
+        warnings.innerText = `"${text}" is not in the list`;
+        setTimeout(() => {
+          warnings.innerText = '';
+        }, 4000);
+      }
+      break;
+
+    default:
+      break;
+  }
 
   /* -- render new words -- */
   const sorted = sortStrings(data.words, data.sort);

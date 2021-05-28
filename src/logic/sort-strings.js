@@ -13,4 +13,7 @@
  * if the sortType is not one of these 6 options, a copy of toSort is returned
  * @returns {string[]} a new sorted array containing the same strings as toSort
  */
-export const sortStrings = () => {};
+export const sortStrings = (toSort='', sortType='') => {
+    // TODO implement sort
+    return toSort;
+};
