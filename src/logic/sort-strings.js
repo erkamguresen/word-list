@@ -13,7 +13,45 @@
  * if the sortType is not one of these 6 options, a copy of toSort is returned
  * @returns {string[]} a new sorted array containing the same strings as toSort
  */
-export const sortStrings = (toSort='', sortType='') => {
-    // TODO implement sort
-    return toSort;
+export const sortStrings = (toSort = '', sortType = '') => {
+  // TODO implement sort
+
+  const returnArray = [...toSort];
+
+  switch (sortType) {
+    case 'oldest':
+      // default squence
+      break;
+
+    case 'newest':
+      returnArray.reverse();
+      break;
+    case 'a':
+      returnArray.sort();
+      break;
+
+    case 'z':
+      returnArray.sort();
+      returnArray.reverse();
+      break;
+
+    case 'shortest':
+      returnArray.sort((a, b) => {
+        a.length - b.length;
+      });
+      break;
+
+    case 'longest':
+      returnArray
+        .sort((a, b) => {
+          a.length - b.length;
+        })
+        .reverse();
+      break;
+
+    default:
+      break;
+  }
+
+  return returnArray;
 };
