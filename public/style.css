@@ -12,11 +12,12 @@ header {
 }
 
 form {
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 
-code {
+code:empty {
   border: 1px solid blue;
+  visibility: hidden;
 }
 
 .warning {
@@ -25,6 +26,6 @@ code {
 
 .main-content {
   margin: 10px auto;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   text-align: center;
 }
