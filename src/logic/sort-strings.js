@@ -14,8 +14,6 @@
  * @returns {string[]} a new sorted array containing the same strings as toSort
  */
 export const sortStrings = (toSort = '', sortType = '') => {
-  // TODO implement sort
-
   const returnArray = [...toSort];
 
   switch (sortType) {
