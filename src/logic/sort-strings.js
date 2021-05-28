@@ -37,14 +37,14 @@ export const sortStrings = (toSort = '', sortType = '') => {
 
     case 'shortest':
       returnArray.sort((a, b) => {
-        a.length - b.length;
+        return a.length - b.length;
       });
       break;
 
     case 'longest':
       returnArray
         .sort((a, b) => {
-          a.length - b.length;
+          return a.length - b.length;
         })
         .reverse();
       break;
