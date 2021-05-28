@@ -44,6 +44,19 @@ export const handleInputWord = (event) => {
 
   // ... write some code ...
 
+  switch (action) {
+    case 'add':
+      //TODO add word to the list
+      break;
+  
+    case 'remove':
+      //TODO remove word from the list
+      break;
+      
+    default:
+      break;
+  }
+
   /* -- render new words -- */
   const sorted = sortStrings(data.words, data.sort);
   updateList(sorted);
