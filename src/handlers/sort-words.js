@@ -24,6 +24,9 @@ export const handleSortWords = (event) => {
 
   // ... write some code ...
 
+  data.sort = howToSort;
+
+  const sorted = sortStrings(data.words, data.sort);
   /* -- render new words -- */
   updateList(sorted);
 };
