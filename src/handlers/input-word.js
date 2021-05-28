@@ -13,7 +13,7 @@ const warnings = document.getElementById('warnings');
  */
 export const handleInputWord = (event) => {
   /* -- entry point for adding or removing a word -- */
-  // debugger;
+
   console.log('-- handler: input word --');
 
   /* -- check the target -- */
@@ -42,8 +42,6 @@ export const handleInputWord = (event) => {
         the list is re-rendered
   */
 
-  // ... write some code ...
-
   switch (action) {
     case 'add':
       if (isWord(text)) {
@@ -55,11 +53,7 @@ export const handleInputWord = (event) => {
             warnings.innerText = '';
           }, 3000);
         }
-
-        console.log('it is a word');
       } else {
-        console.log('it is not a word');
-
         warnings.innerText = `"${text}" is not a word`;
         setTimeout(() => {
           warnings.innerText = '';
@@ -72,10 +66,7 @@ export const handleInputWord = (event) => {
         data.words = data.words.filter((element) => {
           return element !== text;
         });
-        console.log('it has the word');
       } else {
-        console.log(` "${text}" is not in the list'`);
-
         warnings.innerText = `"${text}" is not in the list`;
         setTimeout(() => {
           warnings.innerText = '';
