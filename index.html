@@ -5,16 +5,29 @@
     <title>word list</title>
 
     <link href="./public/style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+      integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+      crossorigin="anonymous"
+    />
   </head>
 
   <body>
-    <div id="root">
+    <header class="bg-success p-4 mb-3">
+      <h1>Item List</h1>
+    </header>
+    <div id="root" class="main-content">
       <form id="input-form">
-        <input name="text" placeholder="new word" />
-        <input type="button" value="add" />
-        <input type="button" value="remove" />
+        <input name="text" placeholder="new word" class="form mb-3" />
+        <input
+          type="button"
+          value="add"
+          class="btn btn-primary bg-success m-3"
+        />
+        <input type="button" value="remove" class="btn btn-danger bg-danger" />
       </form>
-      <code id="warnings" class="warning"></code>
+      <code id="warnings" class="warning">asd</code>
       <br />
       sort:
       <select id="sort-type">
