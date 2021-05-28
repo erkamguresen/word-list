@@ -22,7 +22,7 @@ export const handleInputWord = (event) => {
   }
 
   /* -- gather user input from DOM -- */
-  const text = event.target.form.text.value;
+  const text = event.target.form.text.value.trim();
   const action = event.target.value;
 
   /* -- use the input and data to implement the user story --
@@ -50,7 +50,7 @@ export const handleInputWord = (event) => {
         if (!data.words.includes(text)) {
           data.words.push(text);
         } else {
-          warningElement.innerText = `"${text}" is aldready in the list`;
+          warningElement.innerText = `"${text}" is already in the list`;
           setTimeout(() => {
             warningElement.innerText = '';
           }, 3000);
@@ -70,7 +70,11 @@ export const handleInputWord = (event) => {
     case 'remove':
       //TODO remove word from the list
       if (data.words.includes(text)) {
-        //TODO remove the word & render
+        //TODO remove the word
+
+        data.words = data.words.filter((element) => {
+          return element !== text;
+        });
         console.log('it has the word');
       } else {
         console.log(` "${text}" is not in the list'`);
