@@ -46,9 +46,16 @@ export const handleInputWord = (event) => {
   const warningElement = document.getElementById('warnings');
   switch (action) {
     case 'add':
-      //TODO add word to the list
       if (isWord(text)) {
-        //TODO add the word
+        if (!data.words.includes(text)) {
+          data.words.push(text);
+        } else {
+          warningElement.innerText = `"${text}" is aldready in the list`;
+          setTimeout(() => {
+            warningElement.innerText = '';
+          }, 3000);
+        }
+
         console.log('it is a word');
       } else {
         console.log('it is not a word');
