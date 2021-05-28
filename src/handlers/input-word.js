@@ -43,16 +43,16 @@ export const handleInputWord = (event) => {
   */
 
   // ... write some code ...
-  const warningElement = document.getElementById('warnings');
+
   switch (action) {
     case 'add':
       if (isWord(text)) {
         if (!data.words.includes(text)) {
           data.words.push(text);
         } else {
-          warningElement.innerText = `"${text}" is already in the list`;
+          warnings.innerText = `"${text}" is already in the list`;
           setTimeout(() => {
-            warningElement.innerText = '';
+            warnings.innerText = '';
           }, 3000);
         }
 
@@ -60,9 +60,9 @@ export const handleInputWord = (event) => {
       } else {
         console.log('it is not a word');
 
-        warningElement.innerText = `"${text}" is not a word`;
+        warnings.innerText = `"${text}" is not a word`;
         setTimeout(() => {
-          warningElement.innerText = '';
+          warnings.innerText = '';
         }, 4000);
       }
       break;
@@ -76,9 +76,9 @@ export const handleInputWord = (event) => {
       } else {
         console.log(` "${text}" is not in the list'`);
 
-        warningElement.innerText = `"${text}" is not in the list`;
+        warnings.innerText = `"${text}" is not in the list`;
         setTimeout(() => {
-          warningElement.innerText = '';
+          warnings.innerText = '';
         }, 4000);
       }
       break;
