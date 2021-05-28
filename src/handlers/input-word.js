@@ -63,15 +63,12 @@ export const handleInputWord = (event) => {
         warningElement.innerText = `"${text}" is not a word`;
         setTimeout(() => {
           warningElement.innerText = '';
-        }, 3000);
+        }, 4000);
       }
       break;
 
     case 'remove':
-      //TODO remove word from the list
       if (data.words.includes(text)) {
-        //TODO remove the word
-
         data.words = data.words.filter((element) => {
           return element !== text;
         });
@@ -82,7 +79,7 @@ export const handleInputWord = (event) => {
         warningElement.innerText = `"${text}" is not in the list`;
         setTimeout(() => {
           warningElement.innerText = '';
-        }, 3000);
+        }, 4000);
       }
       break;
 
