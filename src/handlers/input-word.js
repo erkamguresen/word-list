@@ -43,27 +43,38 @@ export const handleInputWord = (event) => {
   */
 
   // ... write some code ...
-
+  const warningElement = document.getElementById('warnings');
   switch (action) {
     case 'add':
       //TODO add word to the list
       if (isWord(text)) {
         //TODO add the word
-        
+        console.log('it is a word');
       } else {
-        //TODO warning word
+        console.log('it is not a word');
+
+        warningElement.innerText = `"${text}" is not a word`;
+        setTimeout(() => {
+          warningElement.innerText = '';
+        }, 3000);
       }
       break;
-  
+
     case 'remove':
       //TODO remove word from the list
       if (data.words.includes(text)) {
         //TODO remove the word & render
+        console.log('it has the word');
       } else {
-        //TODO warning the word is not in the list
+        console.log(` "${text}" is not in the list'`);
+
+        warningElement.innerText = `"${text}" is not in the list`;
+        setTimeout(() => {
+          warningElement.innerText = '';
+        }, 3000);
       }
       break;
-      
+
     default:
       break;
   }
