@@ -13,7 +13,7 @@ const warnings = document.getElementById('warnings');
  */
 export const handleInputWord = (event) => {
   /* -- entry point for adding or removing a word -- */
-
+  event.preventDefault();
   console.log('-- handler: input word --');
 
   /* -- check the target -- */
